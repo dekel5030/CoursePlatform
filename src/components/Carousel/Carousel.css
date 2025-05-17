@@ -1,0 +1,111 @@
+.carousel {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+h1.header {
+  margin: 0;
+}
+
+.swiper,
+.swiper-slide {
+  height: auto !important;
+}
+.slide {
+  position: relative;
+  width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+  pointer-events: none; /* כדי לא לתפוס מקום */
+}
+
+.overlay-button {
+  border: 3px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  width: fit-content;
+  transition: color 0.3s ease, border 0.3s ease;
+}
+
+.overlay-button:hover,
+.overlay-button:visited {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgba(200, 200, 200, 0.6);
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+}
+
+/* בסיס לכל אלמנט */
+.animate-from-right,
+.animate-from-left {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  position: relative; /* נדרש כדי שה-translate יעבוד תקין */
+}
+
+/* כותרת וכפתור - נכנסים מימין */
+.animate-from-right {
+  animation-name: slideInFromRight;
+}
+
+/* פרטים - נכנסים משמאל */
+.animate-from-left {
+  animation-name: slideInFromLeft;
+}
+
+/* מימין אל המרכז */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* משמאל אל המרכז */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

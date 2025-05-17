@@ -1,0 +1,69 @@
+:root {
+  --background-color: #f3f3f3;
+  --secondry-background-color: #2d5c88;
+  --font-color: #2f2f2f;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  top: 0;
+  z-index: 1000;
+  direction: ltr;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+}
+
+.navbar-links li {
+  position: relative;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: background 0.2s;
+}
+
+a,
+a:visited {
+  color: var(--font-color);
+}
+
+.navbar-item {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-item:hover {
+  background-color: var(--secondry-background-color);
+  color: white;
+}
+
+.navbar-item:hover a {
+  color: white;
+}
+
+.selected-tab {
+  border-bottom: 2px solid var(--secondry-background-color);
+}

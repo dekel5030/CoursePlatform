@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./components/NavBar/Navbar";
 import Carousel from "./components/Carousel/Carousel";
 import Course from "./components/Course/Course";
-import photoshopImg from "./assets/photoshop/image1.webp";
+import photoshopImg from "./assets/Photoshop/image1.webp";
 import lumionImg from "./assets/Lumion/image1.webp";
 import revitImg from "./assets/Revit/image1.jpg";
 import sketchupImg from "./assets/Sketchup/image1.jpeg";

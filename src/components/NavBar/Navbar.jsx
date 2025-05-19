@@ -19,10 +19,11 @@ const students = [
 
 const navItems = [
   { label: "ראשי", href: "#main" },
-  { label: "קורסים", dropdown: courses },
+  { label: "קורסים מקצועיים", dropdown: courses },
+  { label: "קורסים אונליין", dropdown: courses },
   { label: "סטודנטים", dropdown: students },
-  { label: "מי אנחנו", href: "#about" },
-  { label: "מה אנחנו נותנים", href: "#offer" },
+  { label: "אודות", href: "#about" },
+  { label: "יצירת קשר", href: "#about" },
 ];
 
 function NavBar() {

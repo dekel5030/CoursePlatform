@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
+import { useNavigate } from "react-router-dom";
 import "./NavBar.css";
 
 const courses = [
@@ -18,8 +19,8 @@ const students = [
 ];
 
 const navItems = [
-  { label: "ראשי", href: "#main" },
-  { label: "קורסים מקצועיים", dropdown: courses },
+  { label: "ראשי", link: "/" },
+  { label: "קורסים מקצועיים", link: "/courses", dropdown: courses },
   { label: "קורסים אונליין", dropdown: courses },
   { label: "סטודנטים", dropdown: students },
   { label: "אודות", href: "#about" },
@@ -28,6 +29,7 @@ const navItems = [
 
 function NavBar() {
   const [activeTabIdx, setActiveTabIdx] = useState(0);
+  const navigate = useNavigate();
 
   const handleLinkClick = (idx) => {
     setActiveTabIdx(idx);
@@ -45,11 +47,11 @@ function NavBar() {
             key={index}
             onClick={() => handleLinkClick(index)}
           >
-            {item.dropdown ? (
-              <DropdownMenu title={item.label} items={item.dropdown} />
-            ) : (
-              <a href={item.href}>{item.label}</a>
-            )}
+            <DropdownMenu
+              title={item.label}
+              items={item.dropdown}
+              onClick={() => navigate(item.link)}
+            />
           </li>
         ))}
       </ul>

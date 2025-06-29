@@ -19,7 +19,7 @@ export default function Course({
       <div className={styles["course-details"]}>
         <h1 className={styles["course-name"]}>{courseName}</h1>
         <p className={styles["course-info"]}>{courseDetails}</p>
-        <button className={styles["course-button"]} onclick={handleButtonClick}>
+        <button className={styles["course-button"]} onClick={handleButtonClick}>
           המשך
         </button>
       </div>

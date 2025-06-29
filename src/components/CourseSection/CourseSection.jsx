@@ -1,6 +1,6 @@
-import styles from "./Course.module.css";
+import styles from "./CourseSection.module.css";
 
-export default function Course({
+export default function CourseSection({
   courseId,
   courseName,
   courseDetails,

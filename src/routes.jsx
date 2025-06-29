@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home.jsx";
 import CoursesPage from "./pages/CoursesPage/CoursesPage.jsx";
 import CourseDetails from "./pages/CourseDetails/CourseDetails.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
+import About from "./pages/About/About.jsx";
 
 const routes = [
   {
@@ -22,6 +23,10 @@ const routes = [
       {
         path: "Courses/:id",
         element: <CourseDetails />,
+      },
+      {
+        path: "About",
+        element: <About />,
       },
     ],
   },

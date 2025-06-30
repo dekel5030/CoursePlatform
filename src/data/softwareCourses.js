@@ -7,39 +7,38 @@ import autocadImg from "../assets/Autocad/image1.jpeg";
 
 const softwareCourses = [
   {
-    courseId: 5,
-    courseName: "Lumion",
-    courseDetails:
-      "יצירת סצנות תלת־ממדיות מתקדמות, כולל טקסטורות, רינדור ואנימציה.",
-    courseImage: lumionImg,
+    id: 5,
+    name: "Lumion",
+    details: "יצירת סצנות תלת־ממדיות מתקדמות, כולל טקסטורות, רינדור ואנימציה.",
+    imageUrl: lumionImg,
   },
   {
-    courseId: 1,
-    courseName: "Photoshop",
-    courseDetails:
+    id: 1,
+    name: "Photoshop",
+    details:
       "לימוד יצירת הדמיות מציאותיות למבנים, כולל תאורה, טקסטורות ואנימציה.",
-    courseImage: photoshopImg,
+    imageUrl: photoshopImg,
   },
   {
-    courseId: 2,
-    courseName: "SketchUp",
-    courseDetails:
+    id: 2,
+    name: "SketchUp",
+    details:
       "תכנון מודלים תלת־ממדיים של מבנים בצורה אינטואיטיבית ומהירה, כולל עבודה עם שכבות וכלי מדידה.",
-    courseImage: sketchupImg,
+    imageUrl: sketchupImg,
   },
   {
-    courseId: 3,
-    courseName: "Revit",
-    courseDetails:
+    id: 3,
+    name: "Revit",
+    details:
       "תכנון אדריכלי ובנייה מבוססת מודלים מידעיים (BIM), כולל עבודה עם תוכניות קונסטרוקציה וחשמל.",
-    courseImage: revitImg,
+    imageUrl: revitImg,
   },
   {
-    courseId: 4,
-    courseName: "AutoCAD",
-    courseDetails:
+    id: 4,
+    name: "AutoCAD",
+    details:
       "שרטוט דו־ממדי ותלת־ממדי מדויק, כולל יצירת תוכניות בנייה וייבוא שכבות.",
-    courseImage: autocadImg,
+    imageUrl: autocadImg,
   },
 ];
 

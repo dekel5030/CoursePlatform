@@ -7,7 +7,7 @@ const Home = () => {
       {softwareCourses.map((course, index) => (
         <CourseSection
           key={course.courseId}
-          {...course}
+          course={course}
           ltr={index % 2 === 0}
         ></CourseSection>
       ))}

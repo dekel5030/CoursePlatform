@@ -25,6 +25,7 @@ const mainNavItems = [
   { id: 4, label: "סטודנטים", dropdown: studentResources },
   { id: 5, label: "אודות", link: "/about" },
   { id: 6, label: "יצירת קשר", href: "#about" },
+  { id: 7, label: "חנות", link: "/checkout" },
 ];
 
 export { professionalCourses, studentResources, mainNavItems };

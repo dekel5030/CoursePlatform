@@ -1,0 +1,28 @@
+.course {
+  width: 250px;
+  height: 250px;
+  background-color: hsla(0, 0%, 81%, 0.339);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.466);
+  cursor: pointer;
+}
+
+.course:hover {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  color: white;
+  text-shadow: 0 0 5px black;
+}

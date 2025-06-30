@@ -5,6 +5,7 @@ import CoursesPage from "./pages/CoursesPage/CoursesPage.jsx";
 import CourseDetails from "./pages/CourseDetails/CourseDetails.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
 import About from "./pages/About/About.jsx";
+import ShoppingCart from "./pages/ShoppingCart/ShoppingCart.jsx";
 
 const routes = [
   {
@@ -27,6 +28,10 @@ const routes = [
       {
         path: "About",
         element: <About />,
+      },
+      {
+        path: "Checkout",
+        element: <ShoppingCart />,
       },
     ],
   },

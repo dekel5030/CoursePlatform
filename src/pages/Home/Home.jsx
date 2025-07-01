@@ -6,7 +6,7 @@ const Home = () => {
     <>
       {softwareCourses.map((course, index) => (
         <CourseSection
-          key={course.courseId}
+          key={course.id}
           course={course}
           ltr={index % 2 === 0}
         ></CourseSection>

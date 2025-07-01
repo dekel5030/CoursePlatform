@@ -1,40 +1,44 @@
-import { useState } from "react";
+import { useContext } from "react";
+import styles from "./ShoppingCart.module.css";
+import useShoppingCart from "../../context/ShoppingCartProvider";
 
 function ShoppingCart() {
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Course A", price: 100, quantity: 1 },
-    { id: 2, name: "Course B", price: 150, quantity: 2 },
-  ]);
+  const { items, removeFromCart } = useShoppingCart();
 
-  const updateQuantity = (id, delta) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(item.quantity + delta, 1) }
-          : item
-      )
-    );
-  };
-
-  const total = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  const total = items.reduce((sum, item) => sum + item.price, 0);
 
   return (
-    <div>
-      <h2>Shopping Cart</h2>
-      {cartItems.map((item) => (
-        <div key={item.id} style={{ marginBottom: "10px" }}>
-          <strong>{item.name}</strong> - ${item.price} x {item.quantity}
-          <div>
-            <button onClick={() => updateQuantity(item.id, -1)}>-</button>
-            <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+    <div className={styles.cart}>
+      <h2>🛒 עגלת קניות</h2>
+      {items.length === 0 ? (
+        <p>אין מוצרים בעגלה.</p>
+      ) : (
+        items.map((item) => (
+          <div key={item.id} className={styles.item}>
+            <img
+              src={item.imageUrl}
+              alt={item.name}
+              className={styles.thumbnail}
+            />
+            <div className={styles.details}>
+              <strong>{item.name}</strong>
+              <p>₪{item.price}</p>
+            </div>
+            <button
+              className={styles.removeButton}
+              onClick={() => removeFromCart(item)}
+            >
+              🗑️
+            </button>
           </div>
-        </div>
-      ))}
-      <h3>Total: ${total}</h3>
-      <button>Checkout</button>
+        ))
+      )}
+      {items.length > 0 && (
+        <>
+          <h3>סה״כ: ₪{total.toFixed(2)}</h3>
+          <button className={styles.checkoutButton}>לתשלום</button>
+        </>
+      )}
     </div>
   );
 }

@@ -1,0 +1,36 @@
+import { createContext, useContext, useState, useEffect } from "react";
+
+const ShoppingCartContext = createContext();
+
+export default function useShoppingCart() {
+  return useContext(ShoppingCartContext);
+}
+
+export function ShoppingCartProvider({ children }) {
+  const [items, setItems] = useState(() => {
+    // טעינה מ-localStorage רק ברינדור הראשון
+    const saved = localStorage.getItem("shopping-cart");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    // שמירת העגלה ב-localStorage בכל שינוי ב-items
+    localStorage.setItem("shopping-cart", JSON.stringify(items));
+  }, [items]);
+
+  const addToCart = (item) => {
+    setItems((prevItems) => [...prevItems, item]);
+  };
+
+  const removeFromCart = (item) => {
+    setItems((prevItems) =>
+      prevItems.filter((prevItem) => prevItem.id !== item.id)
+    );
+  };
+
+  return (
+    <ShoppingCartContext.Provider value={{ items, addToCart, removeFromCart }}>
+      {children}
+    </ShoppingCartContext.Provider>
+  );
+}

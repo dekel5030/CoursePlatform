@@ -11,6 +11,7 @@ const softwareCourses = [
     name: "Lumion",
     details: "יצירת סצנות תלת־ממדיות מתקדמות, כולל טקסטורות, רינדור ואנימציה.",
     imageUrl: lumionImg,
+    price: 1290,
   },
   {
     id: 1,
@@ -18,6 +19,7 @@ const softwareCourses = [
     details:
       "לימוד יצירת הדמיות מציאותיות למבנים, כולל תאורה, טקסטורות ואנימציה.",
     imageUrl: photoshopImg,
+    price: 990,
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const softwareCourses = [
     details:
       "תכנון מודלים תלת־ממדיים של מבנים בצורה אינטואיטיבית ומהירה, כולל עבודה עם שכבות וכלי מדידה.",
     imageUrl: sketchupImg,
+    price: 1150,
   },
   {
     id: 3,
@@ -32,6 +35,7 @@ const softwareCourses = [
     details:
       "תכנון אדריכלי ובנייה מבוססת מודלים מידעיים (BIM), כולל עבודה עם תוכניות קונסטרוקציה וחשמל.",
     imageUrl: revitImg,
+    price: 1490,
   },
   {
     id: 4,
@@ -39,6 +43,7 @@ const softwareCourses = [
     details:
       "שרטוט דו־ממדי ותלת־ממדי מדויק, כולל יצירת תוכניות בנייה וייבוא שכבות.",
     imageUrl: autocadImg,
+    price: 1090,
   },
 ];
 

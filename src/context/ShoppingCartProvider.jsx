@@ -8,13 +8,11 @@ export default function useShoppingCart() {
 
 export function ShoppingCartProvider({ children }) {
   const [items, setItems] = useState(() => {
-    // טעינה מ-localStorage רק ברינדור הראשון
     const saved = localStorage.getItem("shopping-cart");
     return saved ? JSON.parse(saved) : [];
   });
 
   useEffect(() => {
-    // שמירת העגלה ב-localStorage בכל שינוי ב-items
     localStorage.setItem("shopping-cart", JSON.stringify(items));
   }, [items]);
 

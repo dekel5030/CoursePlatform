@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import styles from "./ShoppingCart.module.css";
 import useShoppingCart from "../../context/ShoppingCartProvider";
 
